@@ -234,12 +234,8 @@ function render(gradeable_id, user_id, grader_id, file_name, file_path, page_num
 
                 let pdfData;
                 try {
-                    pdfData = JSON.parse(data);
-                    if (pdfData.status === 'fail') {
-                        alert(pdfData.message);
-                        return;
-                    }
-                    pdfData = atob(pdfData['data']);
+                    pdfData = JSON.parse(data)['data'];
+                    pdfData = atob(pdfData);
                 }
                 catch (err) {
                     console.log(err);
