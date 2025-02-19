@@ -289,6 +289,9 @@ else:
     DEFAULT_LOCALE = get_input('What default language should the Submitty site use?', 'en_US')
     print()
 
+    COURSE_MATERIAL_UPLOAD_LIMIT_MB = get_input('What is the maximum file upload size for course materials (in MB)?', 100)
+    print()
+
     SUBMISSION_URL = get_input('What is the url for submission? (ex: http://192.168.56.101 or '
                                'https://submitty.cs.rpi.edu)', defaults['submission_url']).rstrip('/')
     print()
@@ -446,6 +449,8 @@ else:
     config['institution_name'] = INSTITUTION_NAME
     config['institution_homepage'] = INSTITUTION_HOMEPAGE
     config['debugging_enabled'] = DEBUGGING_ENABLED
+
+    config['course_material_file_upload_limit_mb'] = COURSE_MATERIAL_UPLOAD_LIMIT_MB
 
 # site_log_path is a holdover name. This could more accurately be called the "log_path"
 config['site_log_path'] = TAGRADING_LOG_PATH
@@ -640,7 +645,6 @@ if not args.worker:
     config['duck_special_effects'] = False
 
 config['worker'] = True if args.worker == 1 else False
-config['file_upload_limit_mb'] = 100
 
 with open(SUBMITTY_JSON, 'w') as json_file:
     json.dump(config, json_file, indent=2)
