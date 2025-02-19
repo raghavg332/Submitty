@@ -96,7 +96,7 @@ class ConfigTester extends \PHPUnit\Framework\TestCase {
             'system_message' => "Some system message",
             "duck_special_effects" => false,
             "default_locale" => "default",
-            "course_material_file_upload_limit_mb" => 100,
+            "course_material_file_upload_limit_mb" => 10000,
         ];
         $config = array_replace($config, $extra);
         FileUtils::writeJsonFile(FileUtils::joinPaths($this->config_path, "submitty.json"), $config);
