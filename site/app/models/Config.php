@@ -474,7 +474,7 @@ class Config extends AbstractModel {
         }
 
         if (isset($submitty_json['course_material_file_upload_limit_mb'])) {
-            $this->course_material_file_upload_limit_mb = (int)$submitty_json['course_material_file_upload_limit_mb'];
+            $this->course_material_file_upload_limit_mb = (int) $submitty_json['course_material_file_upload_limit_mb'];
         }
         else {
             $this->course_material_file_upload_limit_mb = 100; // Default to 100 MB if not set

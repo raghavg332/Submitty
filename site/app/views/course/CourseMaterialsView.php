@@ -141,7 +141,7 @@ class CourseMaterialsView extends AbstractView {
         $this->setFolderVisibilities($final_structure, $folder_visibilities);
 
         // In CourseMaterialsController.php
-        
+
         $file_upload_limit_mb = $this->core->getConfig()->getCourseMaterialsMaxFileUploadSize();
 
         $folder_paths = $this->compileAllFolderPaths($final_structure);
