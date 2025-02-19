@@ -95,6 +95,7 @@ class ConfigTester extends \PHPUnit\Framework\TestCase {
             "institution_homepage" => "https://rpi.edu",
             'system_message' => "Some system message",
             "duck_special_effects" => false,
+            "course_material_file_upload_limit_mb" => 100,
             "default_locale" => "default"
         ];
         $config = array_replace($config, $extra);
