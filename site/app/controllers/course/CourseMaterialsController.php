@@ -696,9 +696,6 @@ class CourseMaterialsController extends AbstractController {
             }
 
             // Retrieve the max size allowed from the course config
-            // In CourseMaterialsController.php
-            // $submitty_config = FileUtils::readJsonFile(FileUtils::joinPaths($this->core->getConfig()->getConfigPath(), 'submitty.json'));
-            // $max_size_mb = $submitty_config['file_upload_limit_mb'] ?? 100; // Use 100 as default if not set
             $max_size_mb = $this->core->getConfig()->getCourseMaterialsMaxFileUploadSize();
             $max_size = $max_size_mb * 1024 * 1024;
 

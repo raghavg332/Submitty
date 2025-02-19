@@ -25,6 +25,7 @@ class CourseMaterialsControllerTester extends BaseUnitTest {
         $this->config['course_path'] = FileUtils::joinPaths(sys_get_temp_dir(), Utils::generateRandomString());
         $this->config['use_mock_time'] = true;
         $_POST['csrf_token'] = "";
+        $this->config['course_material_file_upload_limit_mb'] = 100; 
         $this->core = $this->createMockCore($this->config, [], [], ["path.write"]);
         $_POST['release_time'] = $this->core->getDateTimeNow()->format("Y-m-d H:i:sO");
 
