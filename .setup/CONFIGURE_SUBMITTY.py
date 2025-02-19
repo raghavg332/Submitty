@@ -450,8 +450,6 @@ else:
     config['institution_homepage'] = INSTITUTION_HOMEPAGE
     config['debugging_enabled'] = DEBUGGING_ENABLED
 
-    config['course_material_file_upload_limit_mb'] = 100
-
 # site_log_path is a holdover name. This could more accurately be called the "log_path"
 config['site_log_path'] = TAGRADING_LOG_PATH
 config['autograding_log_path'] = AUTOGRADING_LOG_PATH
@@ -643,6 +641,7 @@ if not args.worker:
     config['timezone'] = TIMEZONE
     config['default_locale'] = DEFAULT_LOCALE
     config['duck_special_effects'] = False
+    config['course_material_file_upload_limit_mb'] = 100
 
 config['worker'] = True if args.worker == 1 else False
 
